@@ -1,102 +1,169 @@
-explication de code 
-=============
 
-
+What is Retrieval-Augmented Generation (RAG)?
+---------------------------------------------
 .. raw:: html
 
+    <p style="text-align: justify;"><span style="color:#000080;"><i>  
+    RAG is a method that combines information retrieval with text generation. The model retrieves relevant information from documents and uses a language model to answer questions, summarize, or translate the information, helping provide responses grounded in facts.
 
-    <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Documentation de l'Application Document Processing</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
-                margin: 20px;
-                background-color: #f9f9f9;
-            }
-            h1, h2, h3 {
-                color: #4CAF50;
-            }
-            code {
-                background-color: #e7e7e7;
-                padding: 2px 4px;
-                border-radius: 4px;
-            }
-            pre {
-                background-color: #e7e7e7;
-                padding: 10px;
-                border-radius: 4px;
-                overflow-x: auto;
-            }
-        </style>
-    </head>
-    <body>
+    </i></span></p>
 
-    <h1>📝 Documentation de l'Application Document Processing</h1>
+Step-by-Step Breakdown:
+--------------------------
 
-    <h2>1. Qu'est-ce que ce code fait ?</h2>
-    <p>
-        Ce code permet de créer une application web qui permet à l'utilisateur de télécharger des fichiers PDF, de choisir une action à effectuer sur ces fichiers (résumer, traduire ou poser une question), et d'afficher les résultats. L'application utilise des modèles de langage pour traiter le texte des PDF.
-    </p>
+Libraries and Tools Required:
+______________________________
 
-    <h2>2. Bibliothèques utilisées</h2>
-    <ul>
-        <li><strong>Streamlit</strong>: Bibliothèque pour créer des applications web interactives.</li>
-        <li><strong>Langchain</strong>: Bibliothèque pour travailler avec des modèles de langage (LLMs).</li>
-        <li><strong>Concurrent Futures</strong>: Permet d'exécuter des tâches en parallèle.</li>
-        <li><strong>Tempfile</strong>: Utilisé pour créer des fichiers temporaires.</li>
-    </ul>
+.. raw:: html
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    <Strang>Streamlit:</Strang> This is a Python framework to create interactive web applications. It is used here to create the user interface (UI) where users can upload documents, choose actions, and interact with the app.
+    </i></span></p>
 
-    <h2>3. Structure du code</h2>
+.. raw:: html
+       
+    <Strang>LangChain:</Strang> LangChain is a library designed to facilitate the creation of applications that integrate language models (like Llama, Mistral, etc.) with external data such as documents.
+    </i></span></p>
 
-    <h3>a. main.py</h3>
-    <p>
-        C'est le fichier principal de l'application Streamlit. Voici les étapes clés :
-    </p>
-    <ol>
-        <li><strong>Importation des bibliothèques</strong>: Les bibliothèques nécessaires sont importées au début du fichier.</li>
-        <li><strong>CSS personnalisé</strong>: Un style CSS est défini pour personnaliser l'apparence des boutons et des éléments de l'interface.</li>
-        <li><strong>Interface utilisateur</strong>: Création de l'interface avec Streamlit.</li>
-        <li><strong>Chargement et traitement des PDF</strong>: Les fichiers PDF sont chargés et divisés en morceaux.</li>
-        <li><strong>Choix du modèle</strong>: L'utilisateur peut choisir le modèle de langage à utiliser.</li>
-        <li><strong>Traitement en arrière-plan</strong>: Le traitement des documents est effectué en arrière-plan.</li>
-        <li><strong>Affichage des résultats</strong>: Les résultats sont affichés dans une section extensible.</li>
-    </ol>
+.. raw:: html
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    <Strang>Ollama:<Strang> A specific library used to run different language models (Llama 3.1, Llama 2, Mistral, and CodeLlama) for generating text, answering questions, translating, and summarizing.
+    </i></span></p>
+    
 
-    <h3>b. process_pdf.py</h3>
-    <p>
-        Ce fichier contient des fonctions pour charger et diviser les fichiers PDF :
-    </p>
-    <ul>
-        <li><code>load_and_split_pdfs</code>: Charge les fichiers PDF et les divise en morceaux.</li>
-        <li><code>save_processing_results</code>: Sauvegarde les résultats du traitement dans un fichier texte.</li>
-    </ul>
 
-    <h3>c. question_handler.py</h3>
-    <p>
-        Ce fichier gère le traitement des questions posées par l'utilisateur :
-    </p>
-    <ul>
-        <li><code>get_question_answer_chain</code>: Crée une chaîne de traitement pour répondre aux questions.</li>
-        <li><code>answer_question</code>: Utilise la chaîne de traitement pour obtenir une réponse à la question.</li>
-    </ul>
 
-    <h3>d. summarizer.py</h3>
-    <p>
-        Ce fichier gère le résumé des textes :
-    </p>
-    <ul>
-        <li><code>get_summary_chain</code>: Crée une chaîne de traitement pour générer un résumé.</li>
-        <li><code>summarize_document</code>: Utilise la chaîne de traitement pour résumer le contenu d'un document.</li>
-    </ul>
 
-    <h3>e. translator.py</h3>
-    <p>
-        Ce fichier gère la traduction des textes :
-    </p>
-    <ul>
-        <li><code>
+Streamlit Application Structure
+------------------------------------------------
+.. raw:: html
+
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    The app uses Streamlit to create a user-friendly interface. It consists of several steps:
+    </i></span></p>
+
+
+UI Components
+-------------
+.. raw:: html
+
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    - Users upload PDFs using a file uploader.
+    </i></span></p>
+
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    - They choose the action (Summarize, Translate, or Ask a Question).
+    </i></span></p>
+
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    - They select a language model to use (Llama 3.1, Llama 2, Mistral, or CodeLlama).
+    </i></span></p>
+
+
+Back-End Processing
+-------------------
+
+.. raw:: html
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    After the user uploads PDFs and selects an action, the app processes the documents using background threads.
+    The document content is summarized, translated, or used to answer questions, depending on the user's choice.
+    </i></span></p>
+
+
+Explanation of Code
+----------------=========
+
+- **CSS Styling**: Adds visual styles to the app's buttons, text inputs, and other elements to enhance the user experience.
+- **File Uploader**: ``pdf_files = st.file_uploader()`` allows the user to upload multiple PDFs.
+- **Action Selection**: The user selects what they want to do (Summarize, Translate, Ask a Question) using ``st.selectbox()``.
+
+Document Processing
+----------------=========
+.. raw:: html
+
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    After uploading, the app reads the PDF documents and processes them. This is done using the `process_pdf.py` file:
+    </i></span></p>
+
+- **load_and_split_pdfs**: This function loads and splits PDFs into manageable text chunks. For example, a large document is divided into smaller pieces (chunks) to process more efficiently.
+- **RecursiveCharacterTextSplitter**: Used to split the text into smaller pieces so that language models can handle them better. This is important because models can have token limits.
+.. raw:: html
+
+    
+    <p style="text-align: justify;"><span style="color:red;"><i>     
+    Functions in Process_PDF:
+    </i></span></p>
+
+- **load_and_split_pdfs**: Loads the PDF and divides it into text chunks based on ``chunk_size`` (default 1000 characters) and overlap.
+- **save_processing_results**: Saves the results (summary, translation, or extracted answers) in a text file.
+
+The RAG Models
+----------------
+.. raw:: html
+
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    The app uses four language models via **Ollama**:
+    </i></span></p>
+
+- Llama 3.1
+- Llama 2
+- Mistral
+- CodeLlama
+.. raw:: html
+
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    These models perform text generation tasks such as summarization, translation, and answering questions based on the PDF content. The app switches between them based on the user's selection.
+    </i></span></p>
+
+    
+Chain Functions (How the Actions Work)
+------------------------------------------------
+
+- **Summarization**:
+  - **get_summary_chain**: Sets up a summarization chain using a prompt asking the model to summarize text.
+  - **summarize_document**: This function runs the summarization on a given chunk of text.
+  
+- **Translation**:
+  - **get_translation_chain**: Creates a translation chain that translates the given text into English.
+  - **translate_text**: Runs the translation on a chunk of text.
+
+- **Question Answering**:
+  - **get_question_answer_chain**: Prepares a prompt for answering questions based on the content of the text.
+  - **answer_question**: Runs the language model to answer the user’s question based on the provided document text.
+
+Background Processing
+--------------------------------=
+
+The app uses the **ThreadPoolExecutor** to process each document chunk in parallel, speeding up the overall operation when dealing with large or multiple PDFs. This is important because it prevents the app from freezing while processing multiple files.
+
+Displaying Results
+----------------========
+
+After the background processing is complete, the results (summaries, translations, or answers) are displayed using **st.expander**, where users can view each document's processed result.
+
+Summary of Each Part
+--------------------------------
+
+- **Streamlit UI**: Provides an interactive interface for users to upload documents and choose actions.
+- **Ollama Models**: Executes tasks like summarization, translation, and question answering using different language models (Llama, Mistral, etc.).
+- **LangChain Chains**: Handles specific tasks like summarization, translation, and question answering by setting up appropriate chains with language models.
+- **PDF Processing**: Loads the PDF documents, splits them into manageable chunks, and processes them in parallel for faster performance.
+
+Differences Between Models
+--------------------------------======
+
+- **Llama 3.1 vs. Llama 2**: Llama 3.1 is an updated version with improved accuracy and capabilities compared to Llama 2.
+- **Mistral**: Another advanced model, typically more lightweight and faster, though sometimes at the cost of depth in understanding.
+- **CodeLlama**: Specialized in generating and working with code, useful for technical document translation and summarization.
+
+Conclusion
+----------------
+
+In summary, this app provides a user-friendly interface to process documents with various tasks, combining the power of RAG with different advanced language models through an interactive Streamlit app.
