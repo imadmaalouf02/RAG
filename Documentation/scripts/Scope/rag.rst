@@ -90,7 +90,7 @@ ______________________________
 - **Action Selection**: The user selects what they want to do (Summarize, Translate, Ask a Question) using ``st.selectbox()``.
 
 Document Processing
-______________________________
+_________________________
 .. raw:: html
 
     
@@ -135,15 +135,21 @@ Chain Functions (How the Actions Work)
 ______________________________
 
 - **Summarization**:
+  
   - **get_summary_chain**: Sets up a summarization chain using a prompt asking the model to summarize text.
+  
   - **summarize_document**: This function runs the summarization on a given chunk of text.
   
 - **Translation**:
+  
   - **get_translation_chain**: Creates a translation chain that translates the given text into English.
+  
   - **translate_text**: Runs the translation on a chunk of text.
 
 - **Question Answering**:
+
   - **get_question_answer_chain**: Prepares a prompt for answering questions based on the content of the text.
+  
   - **answer_question**: Runs the language model to answer the user’s question based on the provided document text.
 
 Background Processing
