@@ -16,19 +16,23 @@ ______________________________
 
 .. raw:: html
     
-    <p style="text-align: justify;"><span style="color:#000080;"><i> 
-    <Strang>Streamlit:</Strang> This is a Python framework to create interactive web applications. It is used here to create the user interface (UI) where users can upload documents, choose actions, and interact with the app.
+    
+    <Strang>Streamlit:</Strang> 
+    <p style="text-align: justify;"><span style="color:#000080;"><i>  This is a Python framework to create interactive web applications. It is used here to create the user interface (UI) where users can upload documents, choose actions, and interact with the app.
     </i></span></p>
 
 .. raw:: html
-       
-    <Strang>LangChain:</Strang> LangChain is a library designed to facilitate the creation of applications that integrate language models (like Llama, Mistral, etc.) with external data such as documents.
+     
+    
+    <Strang>LangChain:</Strang>
+    <p style="text-align: justify;"><span style="color:#000080;"><i>  LangChain is a library designed to facilitate the creation of applications that integrate language models (like Llama, Mistral, etc.) with external data such as documents.
     </i></span></p>
 
 .. raw:: html
     
-    <p style="text-align: justify;"><span style="color:#000080;"><i> 
-    <Strang>Ollama:<Strang> A specific library used to run different language models (Llama 3.1, Llama 2, Mistral, and CodeLlama) for generating text, answering questions, translating, and summarizing.
+     
+    <Strang>Ollama:<Strang> 
+    <p style="text-align: justify;"><span style="color:#000080;"><i> A specific library used to run different language models (Llama 3.1, Llama 2, Mistral, and CodeLlama) for generating text, answering questions, translating, and summarizing.
     </i></span></p>
     
 
@@ -122,7 +126,7 @@ The RAG Models
     These models perform text generation tasks such as summarization, translation, and answering questions based on the PDF content. The app switches between them based on the user's selection.
     </i></span></p>
 
-    
+
 Chain Functions (How the Actions Work)
 ------------------------------------------------
 
