@@ -17,21 +17,21 @@ ______________________________
 .. raw:: html
     
     <p style="text-align: justify;">
-    <Str>Streamlit:</Str> 
+    Streamlit:
     <span style="color:#000080;"><i>  This is a Python framework to create interactive web applications. It is used here to create the user interface (UI) where users can upload documents, choose actions, and interact with the app.
     </i></span></p>
 
 .. raw:: html
      
     <p style="text-align: justify;">
-    <St>LangChain:</St>
+    LangChain:
     <span style="color:#000080;"><i>  LangChain is a library designed to facilitate the creation of applications that integrate language models (like Llama, Mistral, etc.) with external data such as documents.
     </i></span></p>
 
 .. raw:: html
     
     <p style="text-align: justify;">
-    <s>Ollama:<s> 
+    Ollama:
     <span style="color:#000080;"><i> A specific library used to run different language models (Llama 3.1, Llama 2, Mistral, and CodeLlama) for generating text, answering questions, translating, and summarizing.
     </i></span></p>
     
