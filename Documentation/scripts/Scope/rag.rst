@@ -149,14 +149,21 @@ ______________________________
 
 Background Processing
 ______________________________
+.. raw:: html
 
-The app uses the **ThreadPoolExecutor** to process each document chunk in parallel, speeding up the overall operation when dealing with large or multiple PDFs. This is important because it prevents the app from freezing while processing multiple files.
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    The app uses the <span style="color:red;">ThreadPoolExecutor</span> to process each document chunk in parallel, speeding up the overall operation when dealing with large or multiple PDFs. This is important because it prevents the app from freezing while processing multiple files.
+    </i></span></p>
 
 Displaying Results
 ______________________________
+.. raw:: html
 
-After the background processing is complete, the results (summaries, translations, or answers) are displayed using **st.expander**, where users can view each document's processed result.
-
+    
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    After the background processing is complete, the results (summaries, translations, or answers) are displayed using **st.expander**, where users can view each document's processed result.
+    </i></span></p>
 Summary of Each Part
 ______________________________
 
@@ -175,6 +182,8 @@ ______________________________
 Conclusion
 ______________________________
 
+.. raw:: html
 
-
-In summary, this app provides a user-friendly interface to process documents with various tasks, combining the power of RAG with different advanced language models through an interactive Streamlit app.
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+    In summary, this app provides a user-friendly interface to process documents with various tasks, combining the power of RAG with different advanced language models through an interactive Streamlit app.
+    </i></span></p>
