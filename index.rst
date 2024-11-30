@@ -28,15 +28,6 @@ RAG
 
 .. toctree::
    :maxdepth: 4
-   :caption: Architecture
-
-
-
-
-
-
-.. toctree::
-   :maxdepth: 4
    :caption: Implimentation
 
 

@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'RAG multi-modal'
+project = 'RAG multi model'
 copyright = '2024, GIIADS, by Maalouf IMAD '
 author = 'imad maalouf'
 
