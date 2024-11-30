@@ -40,7 +40,7 @@ ______________________________
 
 
 Streamlit Application Structure
-------------------------------------------------
+______________________________
 .. raw:: html
 
     <p style="text-align: justify;"><span style="color:#000080;"><i> 
@@ -49,7 +49,7 @@ Streamlit Application Structure
 
 
 UI Components
--------------
+______________________________
 .. raw:: html
 
     <p style="text-align: justify;"><span style="color:#000080;"><i> 
@@ -68,7 +68,7 @@ UI Components
 
 
 Back-End Processing
--------------------
+______________________________
 
 .. raw:: html
     
@@ -79,14 +79,14 @@ Back-End Processing
 
 
 Explanation of Code
-----------------=========
+______________________________
 
 - **CSS Styling**: Adds visual styles to the app's buttons, text inputs, and other elements to enhance the user experience.
 - **File Uploader**: ``pdf_files = st.file_uploader()`` allows the user to upload multiple PDFs.
 - **Action Selection**: The user selects what they want to do (Summarize, Translate, Ask a Question) using ``st.selectbox()``.
 
 Document Processing
-----------------=========
+______________________________
 .. raw:: html
 
     
@@ -107,7 +107,7 @@ Document Processing
 - **save_processing_results**: Saves the results (summary, translation, or extracted answers) in a text file.
 
 The RAG Models
-----------------
+______________________________
 .. raw:: html
 
     
@@ -128,7 +128,7 @@ The RAG Models
 
 
 Chain Functions (How the Actions Work)
-------------------------------------------------
+______________________________
 
 - **Summarization**:
   - **get_summary_chain**: Sets up a summarization chain using a prompt asking the model to summarize text.
@@ -143,17 +143,17 @@ Chain Functions (How the Actions Work)
   - **answer_question**: Runs the language model to answer the user’s question based on the provided document text.
 
 Background Processing
---------------------------------=
+______________________________
 
 The app uses the **ThreadPoolExecutor** to process each document chunk in parallel, speeding up the overall operation when dealing with large or multiple PDFs. This is important because it prevents the app from freezing while processing multiple files.
 
 Displaying Results
-----------------========
+______________________________
 
 After the background processing is complete, the results (summaries, translations, or answers) are displayed using **st.expander**, where users can view each document's processed result.
 
 Summary of Each Part
---------------------------------
+______________________________
 
 - **Streamlit UI**: Provides an interactive interface for users to upload documents and choose actions.
 - **Ollama Models**: Executes tasks like summarization, translation, and question answering using different language models (Llama, Mistral, etc.).
@@ -161,13 +161,15 @@ Summary of Each Part
 - **PDF Processing**: Loads the PDF documents, splits them into manageable chunks, and processes them in parallel for faster performance.
 
 Differences Between Models
---------------------------------======
+______________________________
 
 - **Llama 3.1 vs. Llama 2**: Llama 3.1 is an updated version with improved accuracy and capabilities compared to Llama 2.
 - **Mistral**: Another advanced model, typically more lightweight and faster, though sometimes at the cost of depth in understanding.
 - **CodeLlama**: Specialized in generating and working with code, useful for technical document translation and summarization.
 
 Conclusion
-----------------
+______________________________
+
+
 
 In summary, this app provides a user-friendly interface to process documents with various tasks, combining the power of RAG with different advanced language models through an interactive Streamlit app.
