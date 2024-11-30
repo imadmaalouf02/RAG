@@ -81,7 +81,13 @@ ______________________________
 Explanation of Code
 ______________________________
 
-- **CSS Styling**: Adds visual styles to the app's buttons, text inputs, and other elements to enhance the user experience.
+- **CSS Styling**: 
+.. raw:: html
+
+    <span style="color:#000080;"><i> 
+    Adds visual styles to the app's buttons, text inputs, and other elements to enhance the user experience.
+    </i></span>
+       
 - **File Uploader**: ``pdf_files = st.file_uploader()`` allows the user to upload multiple PDFs.
 - **Action Selection**: The user selects what they want to do (Summarize, Translate, Ask a Question) using ``st.selectbox()``.
 
