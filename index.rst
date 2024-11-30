@@ -30,7 +30,7 @@ RAG
    :maxdepth: 4
    :caption: Implimentation
 
-
+   Documentation/scripts/Scope/rag.rst
 
 .. raw:: html
 
