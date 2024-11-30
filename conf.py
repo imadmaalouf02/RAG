@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'ConvolutionalNeural Network'
+project = 'RAG'
 copyright = '2024, GIIADS, CNN by Maalouf IMAD '
-author = 'Convolutional-Neural-Network'
+author = 'imad maalouf'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
