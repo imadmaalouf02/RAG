@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'RAG'
-copyright = '2024, GIIADS, CNN by Maalouf IMAD '
+project = 'RAG multi-modal'
+copyright = '2024, GIIADS, by Maalouf IMAD '
 author = 'imad maalouf'
 
 # -- General configuration ---------------------------------------------------
