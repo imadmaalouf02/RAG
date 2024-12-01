@@ -40,7 +40,7 @@ ______________________________
 
 
 Streamlit Application Structure
-______________________________
+________________________________
 .. raw:: html
 
     <p style="text-align: justify;"><span style="color:#000080;"><i> 
