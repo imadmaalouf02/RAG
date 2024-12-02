@@ -11,7 +11,7 @@ What is Retrieval-Augmented Generation (RAG)?
 Step-by-Step Breakdown:
 --------------------------
 
-Libraries and Tools Required:
+**1. Libraries and Tools Required:**
 ______________________________
 
 .. raw:: html
@@ -39,7 +39,7 @@ ______________________________
 
 
 
-Streamlit Application Structure
+**2. Streamlit Application Structure**
 ________________________________
 .. raw:: html
 
@@ -48,7 +48,7 @@ ________________________________
     </i></span></p>
 
 
-UI Components
+**3. UI Components**
 ______________________________
 .. raw:: html
 
@@ -67,7 +67,7 @@ ______________________________
     </i></span></p>
 
 
-Back-End Processing
+**4. Back-End Processing**
 ______________________________
 
 .. raw:: html
@@ -78,7 +78,7 @@ ______________________________
     </i></span></p>
 
 
-Explanation of Code
+**5. Explanation of Code**
 ______________________________
 
 - **CSS Styling**: Adds visual styles to the app's buttons, text inputs, and other elements to enhance the user experience.
@@ -89,7 +89,7 @@ ______________________________
 
 - **Action Selection**: The user selects what they want to do (Summarize, Translate, Ask a Question) using ``st.selectbox()``.
 
-Document Processing
+**6. Document Processing**
 _________________________
 .. raw:: html
 
@@ -110,7 +110,7 @@ _________________________
 - **load_and_split_pdfs**: Loads the PDF and divides it into text chunks based on ``chunk_size`` (default 1000 characters) and overlap.
 - **save_processing_results**: Saves the results (summary, translation, or extracted answers) in a text file.
 
-The RAG Models
+**7. The RAG Models**
 ______________________________
 .. raw:: html
 
@@ -131,7 +131,7 @@ ______________________________
     </i></span></p>
 
 
-Chain Functions (How the Actions Work)
+**8. Chain Functions (How the Actions Work)**
 ______________________________
 
 - **Summarization**:
@@ -152,7 +152,7 @@ ______________________________
   
   - **answer_question**: Runs the language model to answer the user’s question based on the provided document text.
 
-Background Processing
+**9. Background Processing**
 ______________________________
 .. raw:: html
 
@@ -161,7 +161,7 @@ ______________________________
     The app uses the <span style="color:red;">ThreadPoolExecutor</span> to process each document chunk in parallel, speeding up the overall operation when dealing with large or multiple PDFs. This is important because it prevents the app from freezing while processing multiple files.
     </i></span></p>
 
-Displaying Results
+**10. Displaying Results**
 ______________________________
 .. raw:: html
 
@@ -169,7 +169,7 @@ ______________________________
     <p style="text-align: justify;"><span style="color:#000080;"><i> 
     After the background processing is complete, the results (summaries, translations, or answers) are displayed using **st.expander**, where users can view each document's processed result.
     </i></span></p>
-Summary of Each Part
+**11. Summary of Each Part**
 ______________________________
 
 - **Streamlit UI**: Provides an interactive interface for users to upload documents and choose actions.
@@ -177,14 +177,14 @@ ______________________________
 - **LangChain Chains**: Handles specific tasks like summarization, translation, and question answering by setting up appropriate chains with language models.
 - **PDF Processing**: Loads the PDF documents, splits them into manageable chunks, and processes them in parallel for faster performance.
 
-Differences Between Models
+**12. Differences Between Models**
 ______________________________
 
 - **Llama 3.1 vs. Llama 2**: Llama 3.1 is an updated version with improved accuracy and capabilities compared to Llama 2.
 - **Mistral**: Another advanced model, typically more lightweight and faster, though sometimes at the cost of depth in understanding.
 - **CodeLlama**: Specialized in generating and working with code, useful for technical document translation and summarization.
 
-Conclusion
+**13. Conclusion**
 ______________________________
 
 .. raw:: html
