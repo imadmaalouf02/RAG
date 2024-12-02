@@ -284,3 +284,151 @@ _______________________
     </i></span></p>
 
 
+Document Processing and Question Answering Application
+-------------------------------------------------------
+
+
+.. raw:: html
+
+    <p style="text-align: justify;">
+        <span style="color:#000080;">
+            <i>The main.py file sets up a user-friendly interface for document processing through the Streamlit framework. It allows users to upload PDFs, select a task (summarization, translation, or question answering), and choose a language model for text processing. By using temporary storage and background processing, the application ensures efficient handling of PDF documents.</i>
+        </span>
+    </p>
+
+**1. UI Components**
+________________________
+
+.. raw:: html
+
+    <p style="text-align: justify;">
+        <span style="color:#000080;">
+            <i>The user interface is divided into two columns: one for uploading PDF files and the other for selecting tasks and models. The layout is created using Streamlit's column feature. It also includes custom CSS for a modern and intuitive look.</i>
+        </span>
+    </p>
+
+.. code-block:: python
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("<h2>📂 Upload PDF(s)</h2>", unsafe_allow_html=True)
+        pdf_files = st.file_uploader("Upload PDF(s)", accept_multiple_files=True, type=['pdf'], label_visibility="collapsed")
+
+    with col2:
+        st.markdown("<h2>🔧 Choose Action</h2>", unsafe_allow_html=True)
+        action = st.selectbox(
+            "Choose the action you want to perform:",
+            ("Summarize", "Translate", "Ask a Question")
+        )
+
+        model_choice = st.selectbox(
+            "Choose the model to use:",
+            ("Llama 3.1", "Llama 2", "Mistral", "CodeLlama")
+        )
+
+**2. Model Selection**
+________________________
+
+.. raw:: html
+
+    <p style="text-align: justify;">
+        <span style="color:#000080;">
+            <i>The language model is initialized based on the user's selection. Options include "Llama 3.1", "Llama 2", "Mistral", and "CodeLlama". These models are loaded using the <strong>Ollama</strong> class, which points to a local server for inference.</i>
+        </span>
+    </p>
+
+.. code-block:: python
+
+    if model_choice == "Llama 3.1":
+        llm = Ollama(model="llama3.1", base_url="http://localhost:11434")
+    elif model_choice == "Llama 2":
+        llm = Ollama(model="llama2", base_url="http://localhost:11434")
+    elif model_choice == "Mistral":
+        llm = Ollama(model="mistral", base_url="http://localhost:11434")
+    elif model_choice == "CodeLlama":
+        llm = Ollama(model="codellama", base_url="http://localhost:11434")
+
+**3. PDF Upload and Processing**
+________________________
+
+.. raw:: html
+
+    <p style="text-align: justify;">
+        <span style="color:#000080;">
+            <i>Once the user uploads PDF files, they are stored temporarily and processed. The content is split into manageable chunks using the <strong>load_and_split_pdfs</strong> function. This ensures that the application can handle large documents efficiently.</i>
+        </span>
+    </p>
+
+.. code-block:: python
+
+    if pdf_files:
+        st.markdown("<h2>🛠 Processing PDFs...</h2>", unsafe_allow_html=True)
+
+        pdf_paths = []
+        with tempfile.TemporaryDirectory() as temp_dir:
+            for pdf_file in pdf_files:
+                temp_pdf_path = f"{temp_dir}/{pdf_file.name}"
+                with open(temp_pdf_path, "wb") as f:
+                    f.write(pdf_file.read())
+                pdf_paths.append(temp_pdf_path)
+
+        docs = load_and_split_pdfs(pdf_paths)
+
+**4. Task Execution**
+________________________
+
+.. raw:: html
+
+    <p style="text-align: justify;">
+        <span style="color:#000080;">
+            <i>The application then performs the task selected by the user. Depending on the task, it either summarizes, translates, or answers questions related to the document's content. The processing is handled in the background using <strong>ThreadPoolExecutor</strong>, allowing for concurrent processing of multiple PDFs.</i>
+        </span>
+    </p>
+
+.. code-block:: python
+
+    def process_document(doc):
+        try:
+            if action == "Summarize":
+                summary = summarize_document(summary_chain, doc.page_content)
+                return {"Result": summary}
+            elif action == "Translate":
+                summary = summarize_document(summary_chain, doc.page_content)
+                translation = translate_text(translation_chain, summary)
+                return {"Result": translation}
+            elif action == "Ask a Question" and question:
+                answer = answer_question(question_chain, question, doc.page_content)
+                return {"Result": answer}
+            else:
+                return {"Result": "No valid input provided."}
+        except Exception as e:
+            return {"Result": f"Error: {str(e)}"}
+
+**5. Displaying Results**
+________________________
+
+.. raw:: html
+
+    <p style="text-align: justify;">
+        <span style="color:#000080;">
+            <i>Once the documents have been processed, the results are displayed in expandable sections, allowing the user to view the output for each PDF. This keeps the interface clean and organized, especially when multiple documents are being processed.</i>
+        </span>
+    </p>
+
+.. code-block:: python
+
+    for i, result in enumerate(results):
+        with st.expander(f"Document {i + 1} - Result"):
+            st.write(result["Result"])
+
+**Summary**
+________________________
+
+.. raw:: html
+
+    <p style="text-align: justify;">
+        <span style="color:#000080;">
+            <i>In summary, the <strong>main.py</strong> script provides a complete workflow for processing PDF documents using different language models. It enables summarization, translation, and question-answering, offering a user-friendly interface through Streamlit, while leveraging powerful language models for natural language processing tasks.</i>
+        </span>
+    </p>
