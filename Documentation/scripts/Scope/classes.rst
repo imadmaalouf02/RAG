@@ -26,9 +26,8 @@ load_and_split_pdfs Function
         Finally, the function returns a list of split documents for further processing, such as summarization or translation.
     </i></span></p>
 
-    <div class="code-block">
-        <strong>Code Snippet:</strong>
-        <pre>
+.. code-block:: python
+
         def load_and_split_pdfs(pdf_paths, chunk_size=1000, chunk_overlap=200):
             documents = []
             for pdf_path in pdf_paths:
@@ -39,14 +38,14 @@ load_and_split_pdfs Function
                 documents.extend(docs)
             text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
             return text_splitter.split_documents(documents)
-        </pre>
-        </div>
+
 
 Save_processing_results Function
 --------------------------------
 
 
 .. raw:: html
+
     <p style="text-align: justify;"><span style="color:#000080;"><i> 
         The <strong>save_processing_results</strong> function saves the results from processing the PDF documents into a text file. It accepts a list of results and an optional file name for output.
     </i></span></p>
@@ -60,9 +59,11 @@ Save_processing_results Function
         This function helps save the results from the PDF processing for later reference or review.
     </i></span></p>
 
-    <div class="code-block">
-        <strong>Code Snippet:</strong>
-        <pre>
+
+
+
+.. code-block:: python
+
     def save_processing_results(results, output_file="results.txt"):
         with open(output_file, 'w') as f:
             for i, result in enumerate(results):
@@ -71,8 +72,8 @@ Save_processing_results Function
                 f.write(f"Translation: {result['Translation']}\n")
                 f.write(f"Emails: {result['Emails']}\n")
                 f.write("-" * 50 + "\n")
-            </pre>
-    </div>
+
+.. raw:: html
 
     <h2>Summary</h2>
     <p style="text-align: justify;"><span style="color:#000080;"><i> 
