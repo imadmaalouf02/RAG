@@ -42,3 +42,39 @@ load_and_split_pdfs Function
         </pre>
         </div>
 
+Save_processing_results Function
+--------------------------------
+
+
+.. raw:: html
+    <p>
+        The <strong>save_processing_results</strong> function saves the results from processing the PDF documents into a text file. It accepts a list of results and an optional file name for output.
+    </p>
+    <p>
+        The function opens the output file in write mode. It iterates over the <em>results</em> list, where each item represents the processed data for a document (e.g., summary, translation, or extracted emails).
+    </p>
+    <p>
+        For each document, the function writes the document number, its summary, translation, and any extracted emails. After each document's results, a separator line is added to ensure the results are clearly formatted.
+    </p>
+    <p>
+        This function helps save the results from the PDF processing for later reference or review.
+    </p>
+
+    <div class="code-block">
+        <strong>Code Snippet:</strong>
+        <pre>
+    def save_processing_results(results, output_file="results.txt"):
+        with open(output_file, 'w') as f:
+            for i, result in enumerate(results):
+                f.write(f"Document {i + 1}:\n")
+                f.write(f"Summary: {result['Summary']}\n")
+                f.write(f"Translation: {result['Translation']}\n")
+                f.write(f"Emails: {result['Emails']}\n")
+                f.write("-" * 50 + "\n")
+            </pre>
+    </div>
+
+    <h2>Summary</h2>
+    <p>
+        In summary, the <strong>load_and_split_pdfs</strong> function loads and processes PDF files by splitting their content into smaller text chunks. These chunks are easier to handle by language models for tasks such as summarization, translation, or question answering. The <strong>save_processing_results</strong> function stores the results in a text file, ensuring that the output of the processing is well-organized and accessible for later use.
+    </p>
