@@ -217,3 +217,70 @@ ___________________________
     <p style="text-align: justify;"><span style="color:#000080;"><i> 
         In summary, the <strong>get_summary_chain</strong> function sets up a summarization process using a language model, while the <strong>summarize_document</strong> function runs this process to generate summaries for any provided text. This approach helps users create concise and meaningful overviews of larger documents.
     </i></span></p>
+
+
+
+translator.py
+--------------
+
+get_translation_chain Function
+______________________________
+
+.. raw:: html
+
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+        The <strong>get_translation_chain</strong> function creates a chain for translating text into English using a language model. It accepts one argument, <em>llm</em>, which stands for the language model responsible for the translation task.
+    </i></span></p>
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+        Inside the function, a <strong>translation_prompt</strong> is defined as a template. This prompt asks the language model to translate the provided text into English.
+    </i></span></p>
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+        The <strong>PromptTemplate</strong> class from the <em>langchain</em> library is used to define the translation prompt template, with <em>text</em> being the only input variable. This allows different texts to be passed into the translation prompt dynamically.
+    </i></span></p>
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+        The function returns an <strong>LLMChain</strong> that links the language model with the translation prompt. This chain will handle the translation task for any given text.
+    </i></span></p>
+
+.. code-block:: python
+
+    from langchain.prompts import PromptTemplate
+    from langchain.chains import LLMChain
+
+    def get_translation_chain(llm):
+        translation_prompt = """
+        Translate the following text into English:
+        Text: {text}
+        """
+        translation_prompt_template = PromptTemplate(template=translation_prompt, input_variables=["text"])
+        return LLMChain(llm=llm, prompt=translation_prompt_template)
+
+
+translate_text Function
+_______________________
+
+.. raw:: html
+
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+        The <strong>translate_text</strong> function is responsible for translating a given piece of text using the translation chain created by the <strong>get_translation_chain</strong> function. It takes two arguments: <em>translation_chain</em>, which represents the translation model, and <em>text</em>, the content to be translated.
+    </i></span></p>
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+        The function calls the <strong>run()</strong> method of the <em>translation_chain</em>, passing the input text in a dictionary format with the <em>text</em> key. The model processes the input and returns the translated text.
+    </i></span></p>
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+        This function allows easy translation of any non-English text into English using a language model, making multilingual documents accessible.
+    </i></span></p>
+
+.. code-block:: python
+
+    def translate_text(translation_chain, text):
+        return translation_chain.run({"text": text})
+
+
+.. raw:: html
+
+    <h2>Summary</h2>
+    <p style="text-align: justify;"><span style="color:#000080;"><i> 
+        In summary, the <strong>get_translation_chain</strong> function sets up the translation process using a language model, while the <strong>translate_text</strong> function leverages this chain to translate any text into English. This system is useful for translating multilingual documents into a common language for easier understanding and processing.
+    </i></span></p>
+
+
