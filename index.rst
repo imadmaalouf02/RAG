@@ -23,13 +23,6 @@ RAG
 
 
 
-
-
-
-
-
-
-
 .. toctree::
    :maxdepth: 3
    :caption: Introduction
