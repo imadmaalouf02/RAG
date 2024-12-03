@@ -1,12 +1,8 @@
-Here’s the updated README that includes all the elements, including the ReadTheDocs documentation link:
-
----
-
 # RAG - Retrieval-Augmented Generation Application
 
 ## Description
 
-This project is an interactive **Streamlit** application designed to enhance text generation tasks using document retrieval. Users can upload their own documents and choose from various language models to perform tasks like summarization, translation, or question-answering. The app integrates the power of multiple large language models (LLMs) to handle a wide variety of natural language processing (NLP) use cases.
+This project is an interactive [**Streamlit** application](https://github.com/imadmaalouf02/RAG/blob/main/model_ollama/main.py) designed to enhance text generation tasks using document retrieval. Users can upload their own documents and choose from various language models to perform tasks like summarization, translation, or question-answering. The app integrates the power of multiple large language models (LLMs) to handle a wide variety of natural language processing (NLP) use cases.
 
 ## Features
 
@@ -14,9 +10,10 @@ This project is an interactive **Streamlit** application designed to enhance tex
 - **Retrieval-Augmented Generation (RAG)**: Combines document retrieval with text generation.
 - **Multiple Language Models**: Choose from Llama 2, Mistral, CodeLlama, and Llama 3.1 for generating responses.
 - **Core Functionalities**:
-  - Document Summarization
-  - Translation
-  - Question-Answering
+  -[Document process](https://github.com/imadmaalouf02/RAG/blob/main/model_ollama/process_pdf.py) 
+  - [Document Summarization](https://github.com/imadmaalouf02/RAG/blob/main/model_ollama/summarizer.py)
+  - [Translation](https://github.com/imadmaalouf02/RAG/blob/main/model_ollama/translator.py)
+  - [Question-Answering](https://github.com/imadmaalouf02/RAG/blob/main/model_ollama/question_handler.py)
 - **Intuitive UI**: Simple and user-friendly interface built with Streamlit.
 - **Customizable Output**: Select from available tasks to get the output you need (summarize, translate, or answer questions).
 
@@ -55,6 +52,11 @@ To install and run the project locally, follow these steps:
    streamlit run model_ollama/main.py
    ```
 
+5. Access the documentation:
+
+   ```bash
+   https://rag.readthedocs.io/en/latest/index.html#
+   ```
 ## Usage
 
 - Access the Streamlit interface in your browser.
