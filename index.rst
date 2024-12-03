@@ -38,6 +38,13 @@ RAG
 
    Documentation/scripts/Scope/rag.rst
    Documentation/scripts/Scope/classes.rst
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Installation and Guide 
+
+   Documentation/scripts/Scope/install.rst
+
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>
