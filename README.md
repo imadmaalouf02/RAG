@@ -10,6 +10,7 @@ This project is an interactive [**Streamlit** application](https://github.com/im
 - **Retrieval-Augmented Generation (RAG)**: Combines document retrieval with text generation.
 - **Multiple Language Models**: Choose from Llama 2, Mistral, CodeLlama, and Llama 3.1 for generating responses.
 - **Core Functionalities**:
+
   -[Document process](https://github.com/imadmaalouf02/RAG/blob/main/model_ollama/process_pdf.py) 
   - [Document Summarization](https://github.com/imadmaalouf02/RAG/blob/main/model_ollama/summarizer.py)
   - [Translation](https://github.com/imadmaalouf02/RAG/blob/main/model_ollama/translator.py)
