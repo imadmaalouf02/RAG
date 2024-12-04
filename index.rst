@@ -45,6 +45,14 @@ RAG
 
    Documentation/scripts/Scope/install.rst
 
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Guide of Application
+
+   Documentation/scripts/Scope/interface.rst
+
+
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>

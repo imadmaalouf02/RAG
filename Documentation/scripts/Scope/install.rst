@@ -63,6 +63,3 @@ Step-by-Step Guide for Using the Application
     </ol>
 
 
-
-
-
