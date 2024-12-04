@@ -147,7 +147,7 @@ Example of question and answer
 
 
 
-.. figure:: /Documentation/images/S9.jpg
+.. figure:: /Documentation/images/S2.jpg
    :width: 100%
    :alt: Alternative text for the image
 
