@@ -10,7 +10,7 @@ from langchain_community.llms import Ollama
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
-# Custom CSS for styling
+# Custom CSS for styling larger chat windows and inputs
 st.markdown("""
     <style>
         .stButton button {
@@ -86,16 +86,36 @@ def get_translation_chain(llm, target_language):
 def translate_text(translation_chain, text):
     return translation_chain.run({"text": text})
 
-# Step 3: Define chat with PDF functionality
-def chat_with_pdf(llm, doc_content, question):
-    question_prompt_template = PromptTemplate(template="Answer the question based on the document content: {text}\nQuestion: {question}", input_variables=["text", "question"])
-    chat_chain = LLMChain(llm=llm, prompt=question_prompt_template)
+# Step 3: Add language option for Chat with PDF
+st.markdown("<h2>🌍 Choose Chat Language</h2>", unsafe_allow_html=True)
+chat_language = st.selectbox(
+    "Select the language for the chat:",
+    ("English", "French", "Arabic")
+)
 
+# Step 4: Define chat with PDF functionality with language choice
+def chat_with_pdf(llm, doc_content, question, language):
+    if language == "Arabic":
+        question_prompt_template = PromptTemplate(
+            template="أجب عن السؤال بناءً على محتوى الوثيقة التالية:\nالمحتوى: {text}\nالسؤال: {question}", 
+            input_variables=["text", "question"]
+        )
+    elif language == "French":
+        question_prompt_template = PromptTemplate(
+            template="Répondez à la question en fonction du contenu du document: {text}\nQuestion: {question}",
+            input_variables=["text", "question"]
+        )
+    else:  # Default is English
+        question_prompt_template = PromptTemplate(
+            template="Answer the question based on the document content: {text}\nQuestion: {question}",
+            input_variables=["text", "question"]
+        )
+
+    chat_chain = LLMChain(llm=llm, prompt=question_prompt_template)
     response = chat_chain.run({"text": doc_content, "question": question})
     return response
 
-# Step 4: Process PDFs
-
+# Step 5: Process PDFs
 if pdf_files:
     st.markdown("<h2>🛠 Processing PDFs...</h2>", unsafe_allow_html=True)
 
@@ -120,11 +140,7 @@ if pdf_files:
 
             # Initialize LLM Chains
             summary_chain = get_summary_chain(llm)
-            question_answer_chain = get_question_answer_chain(llm)
             translation_chain = None
-            if action == "Translate":
-                translation_chain = get_translation_chain(llm, target_language)
-
             # Handle different actions
             if action == "Summarize":
                 st.markdown("<h2>📄 Document Summary</h2>", unsafe_allow_html=True)
@@ -143,9 +159,10 @@ if pdf_files:
                 st.markdown("<h2>❓ Ask a Question</h2>", unsafe_allow_html=True)
                 question = st.text_input("Ask a question about the document:")
                 if question:
-                    answer = answer_question(question_answer_chain, doc_content, question)
+                    answer = answer_question(get_question_answer_chain, doc_content, question)
                     st.markdown(f"**Answer**: {answer}")
 
+            # Handle different actions
             elif action == "Chat with PDF":
                 # Chat interface for continuous questions
                 chat_history = []
@@ -160,15 +177,15 @@ if pdf_files:
                             st.markdown(f"**You**: {chat_entry['question']}")
                             st.markdown(f"**Response**: {chat_entry['response']}")
 
-                # Input and processing
+                # Input and processing for multiple questions
                 while True:
                     question = st.text_input("Ask a question to the document:")
                     if question:
-                        response = chat_with_pdf(llm, doc_content, question)
+                        response = chat_with_pdf(llm, doc_content, question, chat_language)
                         chat_history.append({"question": question, "response": response})
                         display_chat()
                     st.button("Submit")
                     st.stop()  # Pausing execution to ensure continuous question flow
 
             else:
-                st.warning("Please select a valid action to proceed.")
+                st.warning("Please select the 'Chat with PDF' option to use this feature.")
