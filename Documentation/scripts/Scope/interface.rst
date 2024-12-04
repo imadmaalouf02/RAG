@@ -149,37 +149,56 @@ Example of question and answer
 .. raw:: html
 
     <span style="color:red;"> 
-    chat with PDF
+    <strong>chat with PDF</strong>
     </span>
+.. raw:: html
 
-English
+    <p><span style="color:white;">'</p></span>
 
+**English**
+
+.. raw:: html
+
+    <p><span style="color:white;">'</p></span>
 .. figure:: /Documentation/images/S10.jpg
    :width: 100%
    :alt: Alternative text for the image
+.. raw:: html
 
-Arabic
+    <p><span style="color:white;">'</p></span>
 
+**Arabic**
+
+.. raw:: html
+
+    <p><span style="color:white;">'</p></span>
 .. figure:: /Documentation/images/CA.jpg
    :width: 100%
    :alt: Alternative text for the image
 .. raw:: html
 
     <span style="color:red;"> 
-    Summarize English
+    <strong>Summarize English</strong>
 
     </span>
+.. raw:: html
+
+    <p><span style="color:white;">'</p></span>
 
 .. figure:: /Documentation/images/S2.jpg
    :width: 100%
    :alt: Alternative text for the image
 
+
 .. raw:: html
 
+    <p><span style="color:white;">'</p></span>
     <span style="color:red;"> 
-    Summarize Arabic
+    <strong>Summarize Arabic</strong>
     </span>
+.. raw:: html
 
+    <p><span style="color:white;">'</p></span>
 .. figure:: /Documentation/images/S99.jpg
    :width: 100%
    :alt: Alternative text for the image
@@ -190,18 +209,32 @@ Arabic
 
 .. raw:: html
 
+    <p><span style="color:white;">'</p></span>
     <span style="color:red;"> 
-    Translate language
+    <strong>Translate language</strong>
     </span>
+.. raw:: html
 
-original text
+    <p><span style="color:white;">'</p></span>
+
+**original text**
+
+.. raw:: html
+
+    <p><span style="color:white;">'</p></span>
 .. figure:: /Documentation/images/T3.jpg
    :width: 100%
    :alt: Alternative text for the image
 
+.. raw:: html
 
-Translate text
+    <p><span style="color:white;">'</p></span>
 
+**Translate text**
+
+.. raw:: html
+
+    <p><span style="color:white;">'</p></span>
 .. figure:: /Documentation/images/T1.jpg
    :width: 100%
    :alt: Alternative text for the image
