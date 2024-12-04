@@ -75,7 +75,7 @@ link to github repository:[click here](https://github.com/imadmaalouf02/RAG).
 
 
 
-- **Realized by**: MAALOUF Imad |linkedin_mouad|
+- **Realized by**: MAALOUF Imad |linkedin_imad-maalouf|
    
 .. |linkedin_imad-maalouf| image:: Documentation/images/LinkedIn_Logo.png
     :width: 16
