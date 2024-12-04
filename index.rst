@@ -54,9 +54,17 @@ RAG
 
 
 
+.. raw:: html
+
+    <p><span style="color:white;">'</p></span>
+
+
 
 link to github repository:[click here](https://github.com/imadmaalouf02/RAG).
 
+.. raw:: html
+
+    <p><span style="color:white;">'</p></span>
 
 - **Supervisor**: Masrour Tawfik |linkedin_Masrour|
 .. |linkedin_Masrour| image:: Documentation/images/LinkedIn_Logo.png
