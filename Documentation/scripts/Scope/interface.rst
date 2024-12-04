@@ -142,8 +142,19 @@ Main Features
 
 
 
+Example of question and answer
+---------------------------------
 
 
 
+.. figure:: /Documentation/images/S9.jpg
+   :width: 100%
+   :alt: Alternative text for the image
+
+
+
+.. figure:: /Documentation/images/S10.jpg
+   :width: 100%
+   :alt: Alternative text for the image
 
 
