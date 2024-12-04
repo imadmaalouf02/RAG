@@ -73,18 +73,6 @@ elif model_choice == "CodeLlama":
     llm = Ollama(model="codellama", base_url="http://localhost:11434")
 
 # Step 2: Define the translation function with language choice
-def get_translation_chain(llm, target_language):
-    translation_prompts = {
-        "English": "Translate the following text into English:\nText: {text}",
-        "French": "Traduisez le texte suivant en français :\nTexte : {text}",
-        "Arabic": "ترجم النص التالي إلى العربية:\nالنص: {text}"
-    }
-    translation_prompt = translation_prompts[target_language]
-    translation_prompt_template = PromptTemplate(template=translation_prompt, input_variables=["text"])
-    return LLMChain(llm=llm, prompt=translation_prompt_template)
-
-def translate_text(translation_chain, text):
-    return translation_chain.run({"text": text})
 
 # Step 3: Add language option for Chat with PDF
 st.markdown("<h2>🌍 Choose Chat Language</h2>", unsafe_allow_html=True)
@@ -140,7 +128,7 @@ if pdf_files:
 
             # Initialize LLM Chains
             summary_chain = get_summary_chain(llm)
-            translation_chain = None
+            translation_chain = get_translation_chain(llm, target_language)
             # Handle different actions
             if action == "Summarize":
                 st.markdown("<h2>📄 Document Summary</h2>", unsafe_allow_html=True)
