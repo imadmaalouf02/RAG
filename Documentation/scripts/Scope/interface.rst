@@ -158,3 +158,6 @@ Example of question and answer
    :alt: Alternative text for the image
 
 
+.. figure:: /Documentation/images/S9.jpg
+   :width: 100%
+   :alt: Alternative text for the image
