@@ -146,21 +146,61 @@ Example of question and answer
 ---------------------------------
 
 
+.. raw:: html
 
-.. figure:: /Documentation/images/S2.jpg
-   :width: 100%
-   :alt: Alternative text for the image
-
-
+    <span style="color:red;"> 
+    chat with PDF
+    </span>
 
 .. figure:: /Documentation/images/S10.jpg
    :width: 100%
    :alt: Alternative text for the image
 
 
+
+.. raw:: html
+
+    <span style="color:red;"> 
+    Summarize English
+
+    </span>
+
+.. figure:: /Documentation/images/S2.jpg
+   :width: 100%
+   :alt: Alternative text for the image
+
+.. raw:: html
+
+    <span style="color:red;"> 
+    Summarize Arabic
+    </span>
+
+.. figure:: /Documentation/images/S99.jpg
+   :width: 100%
+   :alt: Alternative text for the image
+
 .. figure:: /Documentation/images/S9.jpg
    :width: 100%
    :alt: Alternative text for the image
 
+.. raw:: html
 
-   
+    <span style="color:red;"> 
+    Translate language
+    </span>
+
+original text
+.. figure:: /Documentation/images/T3.jpg
+   :width: 100%
+   :alt: Alternative text for the image
+
+
+Translate text
+
+.. figure:: /Documentation/images/T1.jpg
+   :width: 100%
+   :alt: Alternative text for the image
+
+.. figure:: /Documentation/images/T2.jpg
+   :width: 100%
+   :alt: Alternative text for the image
