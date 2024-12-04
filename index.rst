@@ -53,6 +53,28 @@ RAG
    Documentation/scripts/Scope/interface.rst
 
 
+
+
+link to github repository:[click here](https://github.com/imadmaalouf02/RAG).
+
+
+- **Supervisor**: Masrour Tawfik |linkedin_Masrour|
+.. |linkedin_Masrour| image:: Documentation/images/LinkedIn_Logo.png
+    :width: 16
+    :height: 16
+    :target: https://www.linkedin.com/in/tawfik-masrour-43163b85/
+
+
+
+
+- **Realized by**: MAALOUF Imad |linkedin_mouad|
+   
+.. |linkedin_imad-maalouf| image:: Documentation/images/LinkedIn_Logo.png
+    :width: 16
+    :height: 16
+    :target: https://www.linkedin.com/in/imad-maalouf-811b25264/
+
+
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>
