@@ -152,12 +152,17 @@ Example of question and answer
     chat with PDF
     </span>
 
+English
+
 .. figure:: /Documentation/images/S10.jpg
    :width: 100%
    :alt: Alternative text for the image
 
+Arabic
 
-
+.. figure:: /Documentation/images/CA.jpg
+   :width: 100%
+   :alt: Alternative text for the image
 .. raw:: html
 
     <span style="color:red;"> 
