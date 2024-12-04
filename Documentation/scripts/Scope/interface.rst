@@ -160,9 +160,13 @@ Example of question and answer
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>
+
+    
 .. figure:: /Documentation/images/S10.jpg
    :width: 100%
    :alt: Alternative text for the image
+
+
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>
@@ -172,9 +176,12 @@ Example of question and answer
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>
+
 .. figure:: /Documentation/images/CA.jpg
    :width: 100%
    :alt: Alternative text for the image
+
+
 .. raw:: html
 
     <span style="color:red;"> 
@@ -199,6 +206,7 @@ Example of question and answer
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>
+
 .. figure:: /Documentation/images/S99.jpg
    :width: 100%
    :alt: Alternative text for the image
@@ -222,6 +230,7 @@ Example of question and answer
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>
+
 .. figure:: /Documentation/images/T3.jpg
    :width: 100%
    :alt: Alternative text for the image
@@ -235,6 +244,7 @@ Example of question and answer
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>
+
 .. figure:: /Documentation/images/T1.jpg
    :width: 100%
    :alt: Alternative text for the image
