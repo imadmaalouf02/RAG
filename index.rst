@@ -59,12 +59,8 @@ RAG
     <p><span style="color:white;">'</p></span>
 
 
+link to github repository:  `link <https://github.com/imadmaalouf02/RAG>`__ 
 
-link to github repository:[click here](https://github.com/imadmaalouf02/RAG).
-
-- **link to github repository:**: |github|
-.. |github|
-    :target: https://github.com/imadmaalouf02/RAG
 .. raw:: html
 
     <p><span style="color:white;">'</p></span>
